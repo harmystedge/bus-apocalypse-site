@@ -1,0 +1,41 @@
+{
+  "version": "1.92.0",
+  "build": "1.92.0 (code 116)",
+  "ios_url": "https://testflight.apple.com/join/XXXX",
+  "ios_label": "iPhone / iPad — TestFlight",
+  "tester_url": "https://discord.gg/XXXX",
+  "server_health_url": "https://tidal-subsoil-crumb.ngrok-free.dev/health",
+  "changelog": [
+    {
+      "version": "1.92.0",
+      "date": "25/10/2026",
+      "items": [
+        "Nouvelle classe : le Psychopompe (corps à corps, épée d’âme et tourbillon).",
+        "Set Ultime Dragon, fiche Personnage avec récap des compétences et niveaux de compétence.",
+        "Barre de buffs en bas de l’écran et icônes de debuffs sur les monstres.",
+        "Les 7 boss de repaire refaits dans Blender.",
+        "Forêt : chemin de terre qui ne ralentit pas le bus, objets retirés de la route, moins de zombies près du bus immobile et de la ferme des Morel.",
+        "Loot : comparatif réel dans la fiche, « Équiper le meilleur » corrigé, objets rares à partir du niveau 10 et moins fréquents.",
+        "Minimap : flèche bleue et distance vers la cible choisie sur la grande carte."
+      ]
+    },
+    {
+      "version": "4.8.5-SG",
+      "date": "03/10/2026",
+      "items": [
+        "Version stable 4.8.5-SG disponible.",
+        "Nouvelle version expérimentale 3D Forêt (Godot).",
+        "Correctifs et améliorations diverses."
+      ]
+    },
+    {
+      "version": "4.8.4-SG",
+      "date": "03/10/2026",
+      "items": [
+        "Ajout d'Ossaryx et nouvelles classes.",
+        "Améliorations du monde et des combats.",
+        "Correctifs réseau et équilibrage."
+      ]
+    }
+  ]
+}
