@@ -1,40 +1,23 @@
 {
   "version": "1.92.0",
-  "build": "1.92.0 (code 116)",
-  "ios_url": "https://testflight.apple.com/join/XXXX",
-  "ios_label": "iPhone / iPad — TestFlight",
-  "tester_url": "https://discord.gg/XXXX",
+  "build": "116",
+  "date": "25/10/2026",
+  "apk_url": "https://github.com/harmystedge/bus-apocalypse-site/releases/latest/download/BusApocalypse-latest.apk",
+  "apk_size": "496 Mo",
   "server_health_url": "https://tidal-subsoil-crumb.ngrok-free.dev/health",
   "changelog": [
     {
       "version": "1.92.0",
       "date": "25/10/2026",
       "items": [
-        "Nouvelle classe : le Psychopompe (corps à corps, épée d’âme et tourbillon).",
-        "Set Ultime Dragon, fiche Personnage avec récap des compétences et niveaux de compétence.",
-        "Barre de buffs en bas de l’écran et icônes de debuffs sur les monstres.",
-        "Les 7 boss de repaire refaits dans Blender.",
-        "Forêt : chemin de terre qui ne ralentit pas le bus, objets retirés de la route, moins de zombies près du bus immobile et de la ferme des Morel.",
-        "Loot : comparatif réel dans la fiche, « Équiper le meilleur » corrigé, objets rares à partir du niveau 10 et moins fréquents.",
-        "Minimap : flèche bleue et distance vers la cible choisie sur la grande carte."
-      ]
-    },
-    {
-      "version": "4.8.5-SG",
-      "date": "03/10/2026",
-      "items": [
-        "Version stable 4.8.5-SG disponible.",
-        "Nouvelle version expérimentale 3D Forêt (Godot).",
-        "Correctifs et améliorations diverses."
-      ]
-    },
-    {
-      "version": "4.8.4-SG",
-      "date": "03/10/2026",
-      "items": [
-        "Ajout d'Ossaryx et nouvelles classes.",
-        "Améliorations du monde et des combats.",
-        "Correctifs réseau et équilibrage."
+        "Nouvelle classe : le Psychopompe, au corps à corps, avec son épée d’âme et son tourbillon.",
+        "Set Ultime Dragon, et une fiche Personnage qui récapitule tes compétences et leurs niveaux.",
+        "Tes buffs s’affichent en bas de l’écran, les debuffs au-dessus des monstres.",
+        "Les 7 boss de repaire ont été entièrement refaits.",
+        "Forêt : un chemin de terre où le bus roule à pleine vitesse, et plus aucun obstacle sur la route.",
+        "Moins de zombies autour du bus à l’arrêt et dans la ferme des Morel.",
+        "Butin : vraie comparaison avec ton sac, « Équiper le meilleur » corrigé, objets rares à partir du niveau 10.",
+        "Minimap : une flèche bleue et la distance vers le lieu choisi sur la grande carte."
       ]
     }
   ]

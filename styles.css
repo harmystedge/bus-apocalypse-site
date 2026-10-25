@@ -1,0 +1,134 @@
+@font-face{font-family:"Doto";font-weight:700;font-style:normal;font-display:swap;src:url("assets/fonts/doto-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Doto";font-weight:900;font-style:normal;font-display:swap;src:url("assets/fonts/doto-latin-900-normal.woff2") format("woff2")}
+@font-face{font-family:"Overpass";font-weight:400;font-style:normal;font-display:swap;src:url("assets/fonts/overpass-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Overpass";font-weight:600;font-style:normal;font-display:swap;src:url("assets/fonts/overpass-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Overpass";font-weight:800;font-style:normal;font-display:swap;src:url("assets/fonts/overpass-latin-800-normal.woff2") format("woff2")}
+@font-face{font-family:"Overpass";font-weight:900;font-style:normal;font-display:swap;src:url("assets/fonts/overpass-latin-900-normal.woff2") format("woff2")}
+:root{
+  --bitume:#24282B;
+  --bitume-2:#2F3438;
+  --bitume-3:#3D4348;
+  --jaune:#F2B705;
+  --jaune-fonce:#C99500;
+  --blanc:#F3F4F1;
+  --gris:#B9BEC2;
+  --rouge:#CF3A24;
+  --led:#FFB000;
+  --panneau:#16191B;
+  --f-led:"Doto", ui-monospace, monospace;
+  --f:"Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bitume);color:var(--blanc);font-family:var(--f);font-size:1.0625rem;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+h1,h2,h3{font-weight:900;line-height:1.05;margin:0}
+h2{font-size:clamp(1.9rem,4.2vw,3rem);letter-spacing:-.01em;max-width:18ch}
+.intro{color:var(--gris);max-width:58ch;margin:16px 0 0}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(100svh,920px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(36,40,43,.7) 0%,rgba(36,40,43,0) 55%),linear-gradient(180deg,rgba(36,40,43,.15) 0%,rgba(36,40,43,0) 30%,rgba(36,40,43,.6) 64%,var(--bitume) 100%)}
+
+/* girouette : le panneau de destination à l'avant du bus */
+.girouette{display:flex;align-items:stretch;margin:20px auto 0;width:min(var(--wrap),100% - 32px);
+  background:var(--panneau);border:4px solid #0d0f10;border-radius:6px;box-shadow:inset 0 0 0 1px #2a2f33, 0 10px 30px rgba(0,0,0,.35)}
+.g-num,.g-dest{font-family:var(--f-led);color:var(--led);text-shadow:0 0 8px rgba(255,176,0,.55);white-space:nowrap}
+.g-num{font-weight:900;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1;padding:10px 18px;border-right:3px solid #0d0f10}
+.g-dest{font-weight:700;font-size:clamp(1.05rem,3vw,2rem);align-self:center;padding:0 18px;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.g-dest.swap{animation:led .5s steps(4) both}
+@keyframes led{from{opacity:0}to{opacity:1}}
+
+.hero-text{width:min(var(--wrap),100% - 32px);margin:0 auto;padding:0 0 56px}
+.hero h1{font-size:clamp(3rem,10vw,7.5rem);letter-spacing:-.025em;max-width:9ch;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.lead{font-size:clamp(1.1rem,2vw,1.3rem);max-width:46ch;margin:18px 0 0;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:28px}
+.btn-dl{display:inline-block;background:var(--jaune);color:var(--bitume);font-weight:900;font-size:1.15rem;text-decoration:none;
+  padding:16px 26px;border-radius:8px;box-shadow:0 4px 0 var(--jaune-fonce);transition:transform .08s, box-shadow .08s}
+.btn-dl:hover{background:#ffc414}
+.btn-dl:active{transform:translateY(3px);box-shadow:0 1px 0 var(--jaune-fonce)}
+.btn-dl.dark{background:var(--bitume);color:var(--jaune);box-shadow:0 4px 0 #111416}
+.btn-dl.dark:hover{background:var(--bitume-2)}
+.cta-meta{color:var(--gris);font-size:.95rem}
+.server{display:flex;align-items:center;gap:10px;margin:22px 0 0;font-size:.95rem;color:var(--gris)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--bitume-3);flex:none}
+.server.on .dot{background:#3fcf7f;box-shadow:0 0 0 4px rgba(63,207,127,.18)}
+.server.off .dot{background:var(--rouge)}
+
+/* ---------- la ligne ---------- */
+.ligne{padding:96px 0 80px}
+.arrets{list-style:none;margin:48px 0 0;padding:0;position:relative;max-width:760px}
+.arrets::before{content:"";position:absolute;left:11px;top:14px;bottom:28px;width:8px;background:var(--jaune);border-radius:4px}
+.arrets li{position:relative;padding:0 0 34px 56px}
+.arrets li::before{content:"";position:absolute;left:0;top:4px;width:30px;height:30px;border-radius:50%;background:var(--bitume);border:6px solid var(--jaune)}
+.niv{display:block;font-weight:800;color:var(--jaune);font-variant-numeric:tabular-nums;font-size:.95rem}
+.arrets h3{font-size:clamp(1.3rem,2.6vw,1.65rem);margin:2px 0 6px}
+.arrets p{margin:0;color:var(--gris);max-width:56ch}
+.arrets .terminus{padding-bottom:0}
+.arrets .terminus::before{background:var(--rouge);border-color:var(--rouge);width:38px;height:38px;left:-4px;top:0}
+.arrets .terminus h3{font-size:clamp(1.7rem,3.6vw,2.4rem);color:var(--blanc)}
+
+/* ---------- images ---------- */
+.images{padding:80px 0;background:var(--bitume-2)}
+.mosaic{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:auto auto;gap:16px;margin-top:36px}
+.mosaic figure{margin:0}
+.mosaic img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px}
+.m-big{grid-row:span 2}
+.m-big img{height:calc(100% - 34px);aspect-ratio:auto}
+figcaption{font-size:.92rem;color:var(--gris);margin-top:8px}
+
+/* ---------- équipage ---------- */
+.equipage{padding:96px 0 80px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:48px;align-items:start}
+.classes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;margin:0}
+.classes div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--bitume-3)}
+.classes dt{font-weight:800}
+.classes dd{margin:0;color:var(--gris);text-align:right}
+.classes .new dt::after{content:"nouveau";margin-left:10px;font-size:.75rem;font-weight:800;color:var(--bitume);background:var(--jaune);padding:2px 7px;border-radius:4px;vertical-align:2px}
+.races{color:var(--gris);margin-top:36px;max-width:none}
+
+/* ---------- nouveautés ---------- */
+.nouveau{padding:80px 0;background:var(--bitume-2)}
+.changes{list-style:none;padding:0;margin:32px 0 0;max-width:760px}
+.changes li{padding:14px 0 14px 34px;position:relative;border-bottom:1px solid var(--bitume-3)}
+.changes li::before{content:"";position:absolute;left:4px;top:23px;width:14px;height:6px;background:var(--jaune);border-radius:2px}
+
+/* ---------- installer ---------- */
+.installer{padding:88px 0;background:var(--jaune);color:var(--bitume)}
+.installer h2{margin-bottom:28px}
+.installer .cta-meta{color:#4a3d10;margin-top:16px}
+.etapes{margin:0;padding:0;list-style:none;counter-reset:e}
+.etapes li{counter-increment:e;position:relative;padding:0 0 26px 64px;font-size:1.08rem}
+.etapes li::before{content:counter(e);position:absolute;left:0;top:-4px;width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;background:var(--bitume);color:var(--jaune);font-weight:900;font-size:1.3rem}
+.etapes strong{display:block;font-size:1.2rem}
+
+/* ---------- pied ---------- */
+.pied{padding:36px 0 48px;color:var(--gris);font-size:.95rem}
+.pied .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.pied p{margin:0}
+.pied strong{color:var(--blanc)}
+
+@media (max-width:820px){
+  .two{grid-template-columns:1fr;gap:28px}
+  .mosaic{grid-template-columns:1fr}
+  .m-big{grid-row:auto}
+  .m-big img{height:auto;aspect-ratio:16/9}
+}
+@media (max-width:520px){
+  .classes{grid-template-columns:1fr}
+  .g-num{padding:8px 12px}
+  .g-dest{padding:8px 12px;white-space:normal;line-height:1.15}
+  .hero-text{padding-bottom:40px}
+  .hero-img{object-position:44% 50%}
+}
+@media (prefers-reduced-motion:reduce){
+  .g-dest.swap{animation:none}
+  .btn-dl{transition:none}
+}
